@@ -87,7 +87,7 @@ clinix-ai/
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/your-username/clinix-ai.git
+git clone https://github.com/Manjeet-code/clinix-ai.git
 ```
 
 ### 2. Backend Setup
