@@ -31,6 +31,8 @@ function App() {
     listening,
   } = useSpeechRecognition();
 
+  const API_URL = "https://clinix-ai-backend.onrender.com";
+
   /* ---------------- EFFECTS ---------------- */
 
   useEffect(() => {
@@ -72,10 +74,7 @@ function App() {
     }
 
     try {
-      const res = await axios.post(
-        "http://localhost:5000/nearby-hospitals",
-        location
-      );
+      const res = await axios.post(`${API_URL}/nearby-hospitals`, location)
 
 setHospitalResult(res.data.result);
     } catch (err) {
@@ -103,7 +102,7 @@ setHospitalResult(res.data.result);
 
     try {
   const res = await axios.post(
-  "http://localhost:5000/chat",
+  `${API_URL}/chat`,
   {
     message: userText,
     language: language
@@ -144,10 +143,7 @@ setHospitalResult(res.data.result);
     formData.append("file", file);
 
     try {
-      const res = await axios.post(
-        "http://localhost:5000/analyze-pdf",
-        formData
-      );
+      const res = await axios.post(`${API_URL}/analyze-pdf`, formData)
 
 setPdfResult(res.data.result);
     } catch (err) {
@@ -166,7 +162,7 @@ setPdfResult(res.data.result);
 const checkSymptoms = async () => {
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/symptoms",
+      `${API_URL}/api/symptoms`,
       { symptoms,
         language }
     );
@@ -182,7 +178,7 @@ const checkSymptoms = async () => {
 const checkMedicine = async () => {
   try {
     const res = await axios.post(
-      "http://localhost:5000/api/medicine",
+      `${API_URL}/api/medicine`,
       {
          medicine,
          language
@@ -200,7 +196,7 @@ const checkMedicine = async () => {
 const calculateBMI = async () => {
   try {
     const res = await axios.post(
-      "http://localhost:5000/bmi",
+      `${API_URL}/bmi`,
       {
         weight,
         height
