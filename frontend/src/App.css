@@ -9,7 +9,7 @@ body {
 
 /* MAIN APP CONTAINER */
 .container {
- min-height: 100vh;
+ min-height: 100dvh;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -34,7 +34,9 @@ body {
     0 25px 80px rgba(0, 0, 0, 0.7),
     inset 0 0 20px rgba(255, 255, 255, 0.03);
 
-  overflow: hidden;
+  overflow-x: hidden;
+   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* HEADER */
@@ -874,4 +876,15 @@ body {
   letter-spacing: 1px;
 
   opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+    gap: 12px;
+  }
+
+  .feature-card {
+    width: 100%;
+  }
 }
