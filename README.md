@@ -1,0 +1,1 @@
+Clinix AI is an AI-powered healthcare assistant that provides medical report analysis, symptom assessment, medicine information, BMI risk evaluation, voice interaction, and nearby hospital recommendations.
